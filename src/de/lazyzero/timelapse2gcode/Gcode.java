@@ -7,8 +7,22 @@ public class Gcode {
 	public static final String G4 = "G4";
 	public static final String G4_P = "G4 P";
 	
-	public static final String G90 = "G0";
-	public static final String G91 = "G0";
+	/**
+	 * Metric
+	 */
+	public static final String G20 = "G20";
+	/**
+	 * imperial
+	 */
+	public static final String G21 = "G21";
+	/**
+	 * Absolute Mode
+	 */
+	public static final String G90 = "G90";
+	/**
+	 * Incremental Mode
+	 */
+	public static final String G91 = "G91";
 	
 	public static final String M3 = "M3";
 	public static final String M4 = "M4";

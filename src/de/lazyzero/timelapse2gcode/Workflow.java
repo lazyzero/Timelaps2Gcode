@@ -1,5 +1,7 @@
 package de.lazyzero.timelapse2gcode;
 
+import java.util.Vector;
+
 public class Workflow {
 	private String[] workflow;
 	private String[] preface;
@@ -15,18 +17,20 @@ public class Workflow {
 	
 	private void createWorkflow() {
 		//workflow = {preface , program, postface}; 
-		workflow = new String[preface.length + program.length + postface.length];
+		workflow = null;
+		Vector<String> v = new Vector<String>();
 		for (int i = 0; i < preface.length; i++) {
-			workflow[i] = preface[i];
+			v.add(preface[i]);
 		}
-		int offset = preface.length;
+		
 		for (int i = 0; i < program.length; i++) {
-			workflow[i + offset] = program[i + offset];
+			v.add(program[i]);
 		}
-		offset += program.length;
+		
 		for (int i = 0; i < postface.length; i++) {
-			workflow[i + offset] = postface[i + offset];
+			v.add(postface[i]);
 		}
+		this.workflow = (String[]) v.toArray();
 	}
 	public void resetWorkflow() {
 		this.workflow = null;
